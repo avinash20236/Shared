@@ -52,7 +52,10 @@ def call(){
 stage("Deploy") {
     steps {
         echo "this is for Deploying code"
-        sh 'docker-compose up -d'
+        sh '''
+            docker-compose down || true
+            docker-compose up -d
+        '''
     }
 }
     }
