@@ -49,12 +49,12 @@ def call(){
             }
         }
 
-        stage("Deploy") {
-            steps {
-                echo "this is for Deploying code"
-                sh 'docker-compose up -d'
-            }
-        }
+stage("Deploy") {
+    steps {
+        echo "this is for Deploying code"
+        sh 'docker-compose up -d'
+    }
+}
     }
 }
 
