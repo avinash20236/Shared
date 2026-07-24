@@ -51,9 +51,10 @@ def call(){
 
 stage("Deploy") {
     steps {
-        echo "this is for Deploying code"
         sh '''
             docker-compose down || true
+            docker stop notes-app || true
+            docker rm notes-app || true
             docker-compose up -d
         '''
     }
